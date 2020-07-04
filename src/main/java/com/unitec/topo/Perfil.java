@@ -6,11 +6,16 @@
 package com.unitec.topo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.data.annotation.Id;
 
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Perfil {
+    
+     @Id 
+    private String id;
+    
     private String nombre;
     private String paterno;
     private String email;
@@ -19,10 +24,11 @@ public class Perfil {
 
     @Override
     public String toString() {
-        return "Perfil{" + "nombre=" + nombre + ", paterno=" + paterno + ", email=" + email + ", celular=" + celular + ", edad=" + edad + '}';
+        return "Perfil{" + "id=" + id + ", nombre=" + nombre + ", paterno=" + paterno + ", email=" + email + ", celular=" + celular + ", edad=" + edad + '}';
     }
     
 
+  
     public Perfil() {
     }
   
@@ -64,6 +70,14 @@ public class Perfil {
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
    

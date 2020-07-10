@@ -106,3 +106,4 @@ public Perfil buscarPorId(@PathVariable String id){
 //las arquitecturas estilo REST, y se denomina CONSTRUCCION DE API's
 //API== Application Programming Interface.( la interface en este caso es la
 //union entre cliente(android) y servidor (java)
+//Vamos a empezar a trabajr todo en la nube

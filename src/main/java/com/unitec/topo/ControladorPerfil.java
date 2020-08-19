@@ -48,6 +48,14 @@ public class ControladorPerfil {
 
         System.out.println("Pefil leido " + perfil);
 
+        //Antes de guardar tengo que buscar por id, para recobrar las localizaciones guardadas
+      Perfil perfilGuardado=         repoPerfil.findById(perfil.getId()).get();
+      List<Localizacion> locas=perfilGuardado.getLocalizaciones();
+      //Ahra le agregamos la quee acaba de llegar
+                  locas.add(perfil.getLocalizaciones().get(0));
+                //Las vuevo a reasigna antes de gaurdar
+                perfil.setLocalizaciones(locas);
+                //ya lo guardao
         repoPerfil.save(perfil);
 
         Estatus e = new Estatus();

@@ -6,9 +6,8 @@
 package com.unitec.topo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 import org.springframework.data.annotation.Id;
-
-
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Perfil {
@@ -21,16 +20,15 @@ public class Perfil {
     private String email;
     private String celular;
     private int edad;
-    
-    //El el siguiente es para la ultima localizacion, todavia no el historia
-    private Localizacion loca;
+     private List<Localizacion> localizaciones;
 
     @Override
     public String toString() {
-        return "Perfil{" + "id=" + id + ", nombre=" + nombre + ", paterno=" + paterno + ", email=" + email + ", celular=" + celular + ", edad=" + edad + ", loca=" + loca + '}';
+        return "Perfil{" + "id=" + id + ", nombre=" + nombre + ", paterno=" + paterno + ", email=" + email + ", celular=" + celular + ", edad=" + edad + ", localizaciones=" + localizaciones + '}';
     }
+     
     
-
+ 
  
 
   
@@ -85,13 +83,15 @@ public class Perfil {
         this.id = id;
     }
 
-    public Localizacion getLoca() {
-        return loca;
+    public List<Localizacion> getLocalizaciones() {
+        return localizaciones;
     }
 
-    public void setLoca(Localizacion loca) {
-        this.loca = loca;
+    public void setLocalizaciones(List<Localizacion> localizaciones) {
+        this.localizaciones = localizaciones;
     }
+
+  
 
    
     
